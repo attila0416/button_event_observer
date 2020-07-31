@@ -11,7 +11,7 @@ class Button:
         print()
         print(f"Activating {self.id}")
         current_event = ACTIVATE_FORMAT.format(self.id)
-        subscribed_actions = self.events_map[current_event]
+        subscribed_actions = self.events_map.get(current_event, [])
         for subscribed_action in subscribed_actions:
             subscribed_action()
 
